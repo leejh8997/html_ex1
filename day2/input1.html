@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label> 아이디 : <input type="text" placeholder="아이디를 입력하세요."> </label>
+    <!-- 아이디 : <input type="text" value="test" disabled placeholder="아이디를 입력하세요."> -->
+    </div>
+    <div>
+    비밀번호 : <input type="password" placeholder="비밀번호를 입력하세요.">
+    </div>
+    <div>
+        <input type="button" value="로그인!" onclick="alert('로그인성공!')">
+    </div>
+    <hr>
+    <div>
+        숫자 입력 : <input type="number">
+        날짜 : <input type="date" min="2025-01-01" max="2025-02-05">
+    </div>
+    <div> <!--체크박스는 중복 허용-->
+        <label><input type="checkbox" checked> 자바 </label> <!-- 텍스트를 클릭해도 체크 -->
+        <label><input type="checkbox" > 오라클 </label>
+        <label><input type="checkbox" > html </label>
+    </div>
+    <div><!--라디오는 중복 불가(그룹으로 관리)-->
+        <label><input type="radio" name="subject"> 자바 </label> 
+        <label><input type="radio" name="subject"> 오라클 </label>
+        <label><input type="radio" name="subject"> html </label>
+    </div>
+    <div>
+        <label><input type="radio" name="gender"> 남자 </label> 
+        <label><input type="radio" name="gender"> 여자 </label>
+    </div>
+    <div>
+        <input type="file">
+    </div>
+    <div>
+        <textarea rows="10" cols="50" placeholder="자기소개"> </textarea>
+    </div>
+    <div> <!--드랍/다운-->
+        <select>
+            <option>자바</option>
+            <option>오라클</option>
+            <option>html</option>
+        </select>
+    </div>
+</body>
+</html>

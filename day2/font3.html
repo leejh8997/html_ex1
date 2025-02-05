@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .all{
+            font-weight: bold;
+            font-style: italic;
+            background-color: beige;
+        }
+        .txt1{  /* "#" 붙이면 id로 사용가능  */
+            color : blue;
+            font-size : 50px;
+            
+        }
+        #txt2{
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="all txt1">
+        자바는 재밌다
+    </div>
+    <div class="all" id="txt2">
+        오라클도 재밌다
+    </div>
+    <div class="txt1"> <!-- 태그에 id를 중복해서 쓰는건 권장하지 않음(이벤트 처리시 문제 발생)-->
+        HTML 재밌다
+    </div>
+</body>
+</html>
