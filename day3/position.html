@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            background-color: blue;
+            border: 2px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            position: fixed; /* top,left,right,bottom 좌표로 위치 고정(스크롤에 영향 받지 않음)*/
+            top: 30px;
+            right: 100px;
+        }
+        .box2{
+            border: 2px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: red;
+            /* position: relative;  원래 있어야 할 위치를 기준으로 좌표 이동           
+            top: 20px; */
+        }
+        .box3{
+            border: 2px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            background-color: green;
+            position: absolute; /* static이 아닌 상위요소 위치에 영향 받음(없을시 <body>를 받음) */
+            top: 30px;
+            left: 30px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        box1
+    </div>
+    <div class="box2">
+        box2
+    </div>
+    <div style="position: relative; margin-bottom: 2000px;"> 
+        <div class="box3">
+            box3
+        </div>
+    </div>
+</body>
+</html>

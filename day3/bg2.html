@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 600px;
+            border: 1px solid black;
+            margin: 5px;
+            background-image: url("../day2/media/480-360-sample.jpg");
+            background-repeat: no-repeat;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box" style="background-size: 600px 600px;"></div>
+    <div class="box" style="background-size: contain;"></div> <!-- 이미지가 짤리지 않는 선에서 위아래 맞춤 -->
+    <div class="box" style="background-size: cover;"></div> <!-- 무조건 꽉 채워줘서 원본 이미지가 짤릴 수 있음 -->
+</body>
+</html>

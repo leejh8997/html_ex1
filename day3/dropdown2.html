@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top-menu {
+            background-color : rgb(190, 186, 186);
+            color : black;
+            width: 100px;
+            height: 50px;
+            font-size: 15px;
+            border : none;
+            text-align: center;
+            line-height: 50px;
+            cursor : pointer;
+            float: left;
+        }
+        .menu {
+            display: none; 
+            
+        }
+        .top-menu:hover .menu{
+            display: block;
+            
+        }
+        .a:hover{
+            background-color: black;
+            color: white;
+        }
+        a {
+            background-color: rgb(190, 186, 186);
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .menu a:hover{
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top-menu">
+        <a href="#">메뉴1</a>
+        <div class="menu">
+                <a>Menu 1</a>
+                <a>Menu 2</a>
+                <a>Menu 3</a>            
+        </div>
+    </div>
+    <div class="top-menu">
+        <a href="#">메뉴2</a>
+        <div class="menu">
+                <a>Menu 1</a>
+                <a>Menu 2</a>
+                <a>Menu 3</a>            
+        </div>
+    </div>
+</body>
+</html>
