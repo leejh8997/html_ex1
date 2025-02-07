@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            border: 1px solid gold;
+            display: flex;
+            justify-content: row;
+        }
+        .box{
+            text-align: center;
+            width: 70px;
+            padding: 10px 40px;
+            margin: 5px;
+            background-color: aquamarine;
+        }
+        .contents1{
+            justify-content: center;
+        }
+        .contents2{
+            justify-content: space-around; /* 균일한 간격으로 배치 */
+        }
+        .contents3{
+            justify-content: space-between; /* 양쪽 끝에 배치하고 균일한 간격으로 */
+        }
+        .contents4{
+            justify-content: space-evenly; /* 모든 여백을 똑같이 가지게 배치 */
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="contents4">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        
+    </div>
+</body>
+</html>

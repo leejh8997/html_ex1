@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 300px;
+            border: 1px solid gold;
+        }
+        .grad1{
+            background: repeating-linear-gradient(to right bottom, black, black 30px, yellow 30px, yellow 60px);
+        }
+        .grad2{
+            background: repeating-radial-gradient(black, black 10%, rgb(190, 100, 190) 10%, rgb(190, 100, 190) 20%);
+        }
+    </style>
+</head>
+<body>
+    <div class="box grad1"></div>
+    <div class="box grad2"></div>
+</body>
+</html>

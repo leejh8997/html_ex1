@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            border: 1px solid gold;
+            display: flex;
+            justify-content: row;
+        }
+        .box{
+            text-align: center;
+            width: 70px;
+            padding: 10px 40px;
+            margin: 5px;
+            background-color: aquamarine;
+        }
+        .wrap{
+            flex-wrap: nowrap; /* 플렉스 안에 있는 것들을 한줄에 표시 */
+        }
+        .wrap2{
+            flex-wrap: wrap; /* 여러 줄 표시 */
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="wrap2">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <div class="box">box8</div>
+        
+    </div>
+</body>
+</html>
