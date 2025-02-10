@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">타이틀</h1>
+    <div>
+        <p>자바</p>
+        <p>오라클</p>
+    </div>
+    <input id="num1" >
+    <input id="num2" >
+    <button onclik="fnAlert()">알림창!</button>
+</body>
+</html>
+<script> /* html언어를 제어하기 위해서 사용*/
+    // let node1 = document.querySelector("#title");
+    // node1.style.color="red";
+    // js의 데이터 타입 : let, var, const(상수)
+    // js의 함수는 리턴 타입 x, 파라미터 타입 x
+    function fnAlert(){
+        let obj1 = document.querySelector("#num1").value;
+        let obj2 = document.getElementById("num2").value;
+        alert(parseInt(obj1)+parseInt(obj2));
+    }
+
+</script>

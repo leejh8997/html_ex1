@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="javascript:;">
+        <img id="img" src="../day2/media/집에가고싶다.png" onclick="change()" >
+    </a>
+</body>
+</html>
+<script>
+    function change(){
+        let obj = document.querySelector("#img");
+        
+        if(obj.value==null){
+            obj.src = "../day2/media/하기싫어.png";
+            obj.value="1";
+            console.log(obj.value);
+
+        } else {
+            obj.src = "../day2/media/집에가고싶다.png";
+            obj.value = null;
+        }
+    }
+</script>

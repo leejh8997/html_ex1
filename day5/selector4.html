@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:first-child {
+            font-style: italic;
+            /* 부모 요소의 첫번째 li 태그들에 대해 스타일 부여 */
+        }
+        li:nth-child(2){
+            color: red;
+        }
+        li:nth-child(2n+1){
+            color: aqua;
+            /* 짝수: even or 2n, 홀수: odd or 2n+1 */
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>자바</li>
+        <li>DB</li>
+        <li>HTML</li>
+        <li>javascript</li>
+        <li>JSP</li>
+    </ol>
+    <ul>
+        <li>Git</li>
+        <li>Uml</li>
+        <li>Figma</li>
+    </ul>
+</body>
+</html>
