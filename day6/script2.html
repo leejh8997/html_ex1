@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>숫자입력:<input id="num"></div>
+    <button onclick="fnCreateList()">리스트 추가</button>
+    <ul id = list></ul>
+</body>
+</html>
+<script>
+    function fnCreateList(){
+        let num = document.querySelector("#num").value;
+        let list = document.querySelector("#list");
+        
+        for(let i=1;i<=num;i++){
+            let li = document.createElement("li");
+            // if((i%2)==1){
+            //     li.style.color = "blue";
+            // }
+            let style = document.createAttribute("style");
+            style.value = "color: blue;";   
+            if((i%2)==1){
+                li.setAttributeNode(style);
+            }       
+            li.innerHTML = i;
+            list.appendChild(li);
+        }
+    }
+</script>
