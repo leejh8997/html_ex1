@@ -7,7 +7,7 @@
 </head>
 <body>
     <a href="javascript:;">
-        <img id="img" src="../day2/media/집에가고싶다.png" onclick="change()" >
+        <img id="img" src="../day2/media/java.jpg" onclick="change()" >
     </a>
 </body>
 </html>
@@ -16,12 +16,10 @@
         let obj = document.querySelector("#img");
         
         if(obj.value==null){
-            obj.src = "../day2/media/하기싫어.png";
+            obj.src = "../day2/media/java2.jpg";
             obj.value="1";
-            console.log(obj.value);
-
         } else {
-            obj.src = "../day2/media/집에가고싶다.png";
+            obj.src = "../day2/media/java.jpg";
             obj.value = null;
         }
     }

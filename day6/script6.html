@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div><input type="radio" name="subject" value="java">자바</div>
+    <div><input type="radio" name="subject" value="oracle">오라클</div>
+    <div><input type="radio" name="subject" value="html">HTML/css/javascript</div>
+    <div><input type="radio" name="subject" value="jquery">jquery</div>
+    
+    
+    
+    
+    <button onclick="fnSubject()">선택!</button>
+    <div id="contents"></div>
+    <img src="" style="display: none;" width="300px" height="300px">
+</body>
+
+</html>
+<script>
+    function fnSubject() {
+        let subject = document.getElementsByName("subject");
+        let contents = document.querySelector("#contents");
+        let img = document.querySelector("img");
+        let flg = false;
+        for (let i = 0; i < subject.length; i++) {
+            if (subject[i].checked) {
+                flg = true;
+                img.style.display = "inline";
+                if (subject[i].value == "java") {
+                    img.src = "../day2/media/하기싫어.png";    
+                } else if (subject[i].value == "html") {
+                    img.src = "../day2/media/집에가고싶다.png"; 
+                } else if (subject[i].value == "oracle") {
+                    img.src = "../day2/media/돈벌기힘들다.png";
+                } else if (subject[i].value == "jquery") {
+                    img.src = "../day2/media/놀고싶다.png"                    
+                }
+                return;
+            }
+        }
+        if (!flg) {
+            alert("선택 안함");
+            console.log(img);
+        }
+    }
+</script>

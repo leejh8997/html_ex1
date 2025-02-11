@@ -16,19 +16,19 @@
 </head>
 <body>
     <div id="container" >
-        <img src="../day2/media/하기싫어.png" id="goHome">
+        <img src="../day2/media/java.jpg" id="java">
     </div>
 </body>
 </html>
 <script>
     let container = document.querySelector("#container");
     container.onclick = (e)=>{
-        // console.log(e);
-        // alert(e.pageX + ", " + e.pageY);
+        console.log(e);
+        alert(e.pageX + ", " + e.pageY);
     };
-    let img = document.querySelector("#goHome");
+    let img = document.querySelector("#java");
     img.onclick = ()=>{
-        img.src = "../day2/media/놀고싶다.png";
+        img.src = "../day2/media/java2.jpg";
         // alert(this.src);
     }
     

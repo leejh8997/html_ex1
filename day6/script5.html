@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="subject" value="java">자바
+    <input type="radio" name="subject" value="html">HTML
+    <input type="radio" name="subject" value="oracle">오라클
+    <input type="radio" name="subject" value="jquery">jquery
+    <button onclick="fnSubject()">선택!</button>
+</body>
+</html>
+<script>
+    function fnSubject(){
+        let subject = document.getElementsByName("subject");
+        // let subject = document.querySelector("intput[name='subject']:checked");
+        // if(subject){
+        //     alert(subject.value);
+        // } else {
+        //     alert("선택 안함");
+        // }
+        let flg = false;
+        for(let i=0; i<subject.length; i++){
+            if(subject[i].checked){
+                alert(subject[i].value);
+                flg = true;
+                return;
+            } 
+        }
+        if(!flg){
+            alert("선택 안함");
+        }
+    }
+</script>

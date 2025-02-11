@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><input type="radio" name="subject" value="java">자바</div>
+    <div><input type="radio" name="subject" value="oracle">오라클</div>
+    <div><input type="radio" name="subject" value="html">HTML/css/javascript</div>
+    <div><input type="radio" name="subject" value="jquery">jquery</div>
+    <button onclick="fnSubject()">클릭!</button>
+    <div>
+        <img src="" style="display: none;" width="300px" height="300px">
+    </div>
+</body>
+</html>
+<script>
+    function fnSubject(){
+        let subject = document.querySelector("input[name='subject']:checked").value;
+        let img = document.querySelector("img");
+        img.style.display = "inline";
+
+        if(subject == "java"){
+            img.src = "../day2/media/java.jpg";
+        } else if(subject == "oracle"){
+            img.src = "../day2/media/java2.jpg";
+        } else if(subject == "html"){
+            img.src = "../day2/media/java3.jpg";
+        } else if(subject == "jquery"){
+            img.src = "../day2/media/java4.jpg";
+        }
+    }
+</script>

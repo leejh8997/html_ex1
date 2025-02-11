@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div><input type="checkbox" name="subject" value="java">자바</div>
+    <div><input type="checkbox" name="subject" value="oracle">오라클</div>
+    <div><input type="checkbox" name="subject" value="html">HTML/css/javascript</div>
+    <div><input type="checkbox" name="subject" value="jquery">jquery</div>
+    <button onclick="fnSubject()">클릭!</button>
+    <div id="con">
+        <!-- <img src="" style="display: none;" width="300px" height="300px" id="img"> -->
+    </div>
+</body>
+
+</html>
+<script>
+    function fnSubject() {
+        let subject = document.querySelectorAll("input[name='subject']:checked");
+        // let img = document.querySelector("img");
+        let con = document.querySelector("#con");
+        con.innerHTML="";
+        // img.style.display = "inline";
+        console.log(subject);
+        for (let i = 0; i < subject.length; i++) {
+            let img = document.createElement("img");
+            if(subject[i].value=="java"){
+                img.src = "../day2/media/java.jpg";
+                con.appendChild(img);
+            } else if (subject[i].value=="oracle"){
+                img.src = "../day2/media/java2.jpg";
+                con.appendChild(img);
+            } else if(subject[i].value=="html"){
+                img.src = "../day2/media/java3.jpg";
+                con.appendChild(img);
+            } else if(subject[i].value=="jquery"){
+                img.src = "../day2/media/java4.jpg";
+                con.appendChild(img);
+            }
+        }
+    }
+</script>
