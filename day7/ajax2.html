@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: center;
+            border-collapse: collapse;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="fnUserList()">호출</button>
+    <div id="contents">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function fnUserList() {
+        jQuery.ajax({     // jQuery대신 $.ajax 이렇게 사용 가능
+            url: "https://jsonplaceholder.typicode.com/users",
+            dataType: "json",
+            type: "GET",
+            data: {}, //조건달아서 서버에 요청할 수 있음
+            success: function (data) {
+                let table = document.createElement("table");
+                table.innerHTML = "<th>아이디</th><th>이름</th><th>이메일</th><th>웹사이트</th>";  
+                 
+
+                for(let i=0; i<data.length; i++){
+                    let tr = document.createElement("tr");
+                    tr.innerHTML = "<td>" + data[i].id +"</td>" +
+                        "<td>" + data[i].name +"</td>" +
+                        "<td>" + data[i].email +"</td>" +
+                        "<td>" + data[i].website +"</td>";
+                    table.appendChild(tr);
+                }
+                
+                
+                let contents = document.querySelector("#contents");
+                contents.appendChild(table);
+            } // 서버통신이 성공하면 함수 실행, 서버에서 보내 주는 결과를 data라는 매개변수로 받음
+        });
+    }
+</script>

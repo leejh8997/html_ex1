@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .light-mode{
+            background-color: white;
+        }
+        .dark-mode{
+            background-color: #222;
+            color: white;
+        }
+        #btn{
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid black;
+        }
+        #container{
+            width: 600px;
+            margin: 50px auto;
+            border: 1px solid black;
+            padding-bottom: 50px;
+        }
+        .dark-mode #btn{
+            background-color: black;
+            border: 1px solid white;
+            color: white;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    
+    <div id="container">
+        <button onclick="fnMode()" id="btn">다크모드</button>
+        <h1>프로그래밍 재밌다~</h1>
+        <ul>
+            <li>html</li>
+            <li>css</li>
+            <li>자바스크립트</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
+<script>
+    function fnMode(){
+        let body = document.body;
+        let btn = document.querySelector("#btn");
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+        if(body.classList.contains('dark-mode')){
+            btn.innerHTML = '라이트모드';
+        } else{
+            btn.innerHTML = '다크모드';
+        }
+        // if(body.classList.value=="dark-mode"){         
+        //     btn.style.backgroundColor = "black";
+        //     btn.style.color = "white";
+        //     btn.style.border = "1px solid white";
+        //     btn.innerHTML = "라이트모드";
+        // }else{
+        //     btn.style.backgroundColor = "white";
+        //     btn.style.color = "black";
+        //     btn.style.border = "1px solid black";
+        //     btn.innerHTML = "다크모드";
+        // }
+    }
+</script>
