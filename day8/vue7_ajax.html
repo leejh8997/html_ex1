@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        /* tr:nth-child(2n){
+            color: blue;
+        }
+        tr:nth-child(2n+1){
+            color: red;
+        } */
+        .blue-txt{
+            color: blue;
+        }
+        .red-txt{
+            color: red;
+        }
+        a, a:link{
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table v-if="viewFlg">
+            <tr>
+                <th>번호</th><th>이름</th><th>이메일</th><th>웹사이트</th><th>삭제</th>
+            </tr>
+            <tr v-for="(item, index) in list" >
+                <!-- th와 td의 갯수를 맞춰서 관리하기 쉽게하기 위해서 span을 추가해서 사용 -->
+                <!-- <td v-if="index%2==0" style="color: red;">{{index+1}}</td>
+                <td v-else style="color: blue;">{{index+1}}</td>
+                <td v-if="index%2==0" style="color: red;">{{item.name}}</td>
+                <td v-else style="color: blue;">{{item.name}}</td>
+                <td v-if="index%2==0" style="color: red;">{{item.email}}</td>
+                <td v-else style="color: blue;">{{item.email}}</td>
+                <td v-if="index%2==0" style="color: red;">{{item.website}}</td>
+                <td v-else style="color: blue;">{{item.website}}</td> -->
+                <td>
+                    {{index+1}}
+                </td>
+                <td>
+                    <a href="javascript:;" @click="fnSetUser(item)">{{item.name}}</a>
+                </td>
+                <td>
+                    <span v-if="(index+1)%2==1" class="blue-txt">{{item.email}}</span>
+                    <span v-else class="red-txt">{{item.email}}</span>
+                </td>
+                <td>
+                    {{item.website}}
+                </td>
+                <td><button @click="fnDelete(index)">삭제</button></td>
+            </tr>
+        </table>
+
+        <div v-if="!viewFlg">
+            상세정보 : 
+            <div>이름 : {{user.name}}</div>
+            <div>번호 : {{user.phone}}</div>
+            <div>회사명 : {{user.company.name}}</div>
+            <div>주소 : {{user.address.street}}</div>
+            <button @click="viewFlg=!viewFlg">돌아가기</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                list : [],
+                user : {},
+                viewFlg : true
+            };
+            
+        },
+        methods: {
+            fnUserlist: function () {
+                let self = this;
+                $.ajax({
+                    url : "https://jsonplaceholder.typicode.com/users",
+                    dataType : "json",
+                    type : "GET",
+                    data : {}, //조건달아서 서버에 요청할 수 있음
+                    success : function (data) { 
+                        self.list = data;
+                    }
+                });
+            },
+            fnSetUser: function(item){
+                let self = this;
+                self.user = item;
+                self.viewFlg = false;
+                console.log(item);
+            },
+            fnDelete : function(index){
+                let self = this;
+                self.list.splice(index,1);
+            }
+        },
+        mounted() {
+            let self = this;
+            self.fnUserlist();
+        }
+    });
+
+    app.mount('#app');
+</script>

@@ -30,15 +30,17 @@
 </html>
 <script>
     function fnUserList() {
+        let table = document.createElement("table"); // 함수 안에서 선언하면 버튼 누를 때 마다 그려지므로 밖에서 선언
+        
         jQuery.ajax({     // jQuery대신 $.ajax 이렇게 사용 가능
             url: "https://jsonplaceholder.typicode.com/users",
             dataType: "json",
             type: "GET",
             data: {}, //조건달아서 서버에 요청할 수 있음
             success: function (data) {
-                let table = document.createElement("table");
-                table.innerHTML = "<th>아이디</th><th>이름</th><th>이메일</th><th>웹사이트</th>";  
-                 
+                let trh = document.createElement("tr");
+                trh.innerHTML = "<th>아이디</th><th>이름</th><th>이메일</th><th>웹사이트</th>";  
+                table.appendChild(trh);
 
                 for(let i=0; i<data.length; i++){
                     let tr = document.createElement("tr");

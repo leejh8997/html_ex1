@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div style="margin-bottom: 5px;">
+            <select v-model="selectItem">
+                <option value="userID">아이디</option>
+                <option value="userName">이름</option>
+            </select>
+            <input v-model="keyword"><button @click="fnUserList">검색</button>
+        </div>
+        <table>
+            <th>아이디</th>
+            <th>이름</th>
+            <th>이메일</th>
+            <th>웹사이트</th>
+            <tr v-for="item in list">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.website}}</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                list : [],
+                keyword : "",
+                selectItem : "userID"
+            };
+            
+        },
+        methods: {
+
+            fnUserList: function () {
+                let self = this;
+                let param = {};
+                if(self.keyword != ""){
+                    // param = self.selectItem == "userName" ? param = {name : self.keyword} : param = {id : self.keyword}
+                    if(self.selectItem == "userName"){
+                        param = {name : self.keyword};
+                    }
+                    else if(self.selectItem == "userID"){
+                        param = {id : self.keyword};
+                    }
+                }
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/users",
+                    dataType: "json",
+                    type: "GET",
+                    data: param, //조건달아서 서버에 요청할 수 있음
+                    success: function (data) {
+                        self.list = data;
+                    }
+                });
+            }
+
+        },
+        mounted() {
+            let self = this;
+            self.fnUserList();
+        }
+    });
+
+    app.mount('#app');
+</script>
